@@ -29,6 +29,9 @@ end
 # [['Bob', 'Clive'], ['Bob', 'Dave'], ['Clive', 'Dave']]
 # make sure you don't have the same pairing twice,
 def every_possible_pairing_of_students(array)
+	pairings = array.permutation(2).to_a
+	pairings.map { |pair| pair.sort! }
+	pairings.uniq
 end
 
 # discard the first 3 elements of an array,
